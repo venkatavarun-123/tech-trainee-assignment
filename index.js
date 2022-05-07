@@ -33,6 +33,14 @@ class MovieAPI {
 		return sortedrating
 
 	}
+	//utility/helper method to check whether a given id is valid or not
+	isValidId(id){
+		if(id<1 || id>this.movies[this.movies.length-1].id){
+			return false
+		}
+		return true
+
+	}
 
 	//2) This method returns array of movies of certain genre if found and prints error message if the genre is not found
 	returnMoviesOfCertainGenre(inputgenre){
@@ -51,7 +59,7 @@ class MovieAPI {
 
 	//3) This method removes movie of the given inputid if found and prints error message if id is not found
 	removeMovie(inputid){
-		if(inputid<1 || inputid>this.movies[this.movies.length-1].id){
+		if(!this.isValidId(inputid)){
 			return "Enter a valid id present in moviesarray"
 		}
 		const removedmoviearray=this.movies.filter(function(item){
@@ -156,7 +164,7 @@ class MovieAPI {
 	//10) method which returns a movie if the id is found else prints error message
 	returnMovie(id){
 
-		if(id<1 || id>this.movies[this.movies.length-1].id){
+		if(!this.isValidId(id)){
 			return "Enter a valid id present in moviesarray"
 		}
 
@@ -170,7 +178,7 @@ class MovieAPI {
 	//11) method for changing the title of the movie with particular id if found else prints error message
 	changeTitle(id,newtitle){
 
-		if(id<1 || id>this.movies[this.movies.length-1].id){
+		if(!this.isValidId(id)){
 			console.log("Enter a valid id present in moviesarray")
 			return 
 		}
@@ -192,7 +200,7 @@ const allMovies = API.fetchAllMovies();
 
 //console.log(allMovies)
 //console.log(API.returnMoviesOfCertainGenre("Sci-Fi"))
-//console.log(API.removeMovie(10))
+//console.log(API.removeMovie(13))
 //console.log(API.moviesWithSubtitleAndThumbFilteredOut())
 //console.log(API.moviesSortedByName())
 //console.log(API.moviesSortedByNameDesc())
@@ -206,28 +214,9 @@ API.addObject("Big Buck Bunny tells the story of a giant rabbit with a heart big
 console.log(allMovies)
 */
 
-//console.log(API.returnMovie(4))
+//console.log(API.returnMovie(10))
 
 /*
 API.changeTitle(10,"my own title")
 console.log(allMovies)
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
