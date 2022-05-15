@@ -1,5 +1,4 @@
 # Tech Trainee Code Test
-
 ## Appendix:Code
 ```javascript
 const moviesJson = require('./movies.json');
@@ -220,10 +219,5 @@ const allMovies=API.fetchAllMovies()
 console.log(allMovies)
 */
 
-
-
-
 ```
-
-### Uncomment and execute each method individually
 I have spent around 1.5-2 hours on this project.
